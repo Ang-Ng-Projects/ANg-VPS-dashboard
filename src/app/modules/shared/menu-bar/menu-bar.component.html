@@ -1,0 +1,177 @@
+<div class="shadow-none" id="sidebar-wrapper">
+    <div class="sidebar-heading grid-menu">
+        <div class="grid-one pointer" style="padding-bottom: 0px;" (click)="goToDashboard()">
+            <img style="width: 60%; height: 90%" src="assets/image/Bujeel_logo_eng.png">
+            
+        </div>
+    </div>
+    <hr class="hr-style">
+
+    <div class="" id="accordionExample">
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="onDashboard()" class="btn accordion" [ngClass]="{'active': selectedNavTab === '1'}" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <img class="side-icon" src="assets/image/Dashboard icon.png">Dashboard
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseOne" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="onMatrix()" class="btn accordion" [ngClass]="{'active': selectedNavTab === '7'}" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            <img class="side-icon" src="assets/image/metrics.png">Metrics
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseSeven" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="open2 = open2=='true' ? 'false' : 'true'"  class="btn accordion" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <img class="side-icon" src="assets/image/Feedback icon.png">Reports <i class="fa fa-caret-down" *ngIf="open2=='false' || !open2" aria-hidden="true"></i>
+                            <i class="fa fa-caret-up" *ngIf="open2=='true'" aria-hidden="true"></i>
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onAppointment()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '2'}" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <img class="side-icon" src="assets/image/Book_appointment.png">Appointment
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onFeedback()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '3'}" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <img class="side-icon" src="assets/image/Feedback icon.png">Feedback
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onTickets()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '4'}" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <img class="side-icon" src="assets/image/Ticket icon.png">Live Agent
+                        </button>
+                        <button *ngIf="open2=='true'" class="btn accordion ml-2" (click)="onMilestone()" [ngClass]="{'active': selectedNavTab === '5'}" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <img class="side-icon" src="assets/image/milestone_icon.png">Milestone
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onVisitors()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '6'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/image/suitcase.png">Conversion
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onHospital()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '9'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/image/hospital.png">Hospital Location
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onLab()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '10'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/image/flask.png">Lab Medication
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onPharmacy()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '32'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/images/pharmacy.png">Pharmacy
+                        </button>
+                        <button *ngIf="open2=='true'" (click)="onPatient()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '33'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/images/patientReg.png">Patient Registration
+                        </button>
+                         <button *ngIf="open2=='true'" (click)="onReminder()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '36'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/images/3396225-200.png">Appointment Reminder
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="open3 = open3=='true' ? 'false' : 'true'"  class="btn accordion" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <img class="side-icon" src="assets/image/analytics.png">Analytics <i class="fa fa-caret-down" *ngIf="open3=='false' || !open3" aria-hidden="true"></i>
+                            <i class="fa fa-caret-up" *ngIf="open3=='true'" aria-hidden="true"></i>
+                        </button>
+                        <button *ngIf="open3=='true'" (click)="onAnamile()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '8'}" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <img class="side-icon" src="assets/image/Book_appointment.png">Milestone left
+                        </button>
+                        <button *ngIf="open3=='true'" (click)="onAnaLang()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '11'}" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <img class="side-icon" src="assets/image/Feedback icon.png">Appointment Language
+                        </button>
+                        <button *ngIf="open3=='true'" (click)="onAnaAppointment()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '22'}" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <img class="side-icon" src="assets/image/Ticket icon.png">Appointment
+                        </button>
+                        <button *ngIf="open3=='true'" class="btn accordion ml-2" (click)="onAnaVis()" [ngClass]="{'active': selectedNavTab === '23'}" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <img class="side-icon" src="assets/image/milestone_icon.png">Visitor Conversion
+                        </button>
+                        <button *ngIf="open3=='true'" (click)="onAnaLive()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '24'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/image/suitcase.png">Live Agent
+                        </button>
+                        <button *ngIf="open3=='true'" (click)="patAna()" class="btn accordion ml-2" [ngClass]="{'active': selectedNavTab === '34'}" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <img class="side-icon" src="assets/images/patient-ana.png">Patient Registration
+                        </button>
+
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+        <!-- <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="onFeedback()" class="btn accordion" [ngClass]="{'active': selectedNavTab === '3'}" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <img class="side-icon" src="assets/image/Feedback icon.png">Feedback
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseThree" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="onTickets()" class="btn accordion" [ngClass]="{'active': selectedNavTab === '4'}" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <img class="side-icon" src="assets/image/Ticket icon.png">Live Agent
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseFour" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button class="btn accordion" (click)="onMilestone()" [ngClass]="{'active': selectedNavTab === '5'}" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <img class="side-icon" src="assets/image/milestone_icon.png">Milestone
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseFive" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+
+
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="onVisitors()" class="btn accordion" [ngClass]="{'active': selectedNavTab === '6'}" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            <img class="side-icon" src="assets/image/suitcase.png">Conversion
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseSix" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div> -->
+        
+        <div class="">
+            <div class="accordion-menu" id="headingOne">
+                <h2 class="collapse-inner rounded mb-0">
+                    <a class="collapse-item ">
+                        <button (click)="logOut()" class="btn accordion" type="button">
+                            <img class="side-icon" src="assets/image/power-off.png">Logout
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div id="collapseEight" class="" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+        </div>
+
+    </div>
+    <!-- <p class="version-class">Version 1.0</p> -->
+</div>

@@ -1,0 +1,4 @@
+::ng-deep.daterangepicker .drp-calendar {
+    display: block;
+    max-width: 270px;
+}

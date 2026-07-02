@@ -1,0 +1,184 @@
+<div class="row mt-3">
+    <div class="col-6">
+        <p class="font-blk mar-10"> Language Analytics </p>
+    </div>
+    <div class="p-field col-4">
+      <p-calendar
+        #calendar
+        view="month"
+        showClear="true"
+        [hideOnDateTimeSelect]="true"
+        selectionMode="range"
+        [(ngModel)]="fromDate"
+        dateFormat="mm/yy"
+        [yearNavigator]="true" yearRange="2000:2030"
+        [readonlyInput]="true"
+        inputId="pickmonth"
+        
+        [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'"
+        [showIcon]="true"
+        placeholder="Select Month/Year Range">
+        <p-footer>
+          <button pButton type="button" label="Close" 
+             (click)="calendar.hideOverlay()">
+          </button>
+      </p-footer>
+      </p-calendar>
+      
+  </div>
+
+
+ 
+  
+  <div class="col-1 pt-1 text-right pr-0">
+      
+      <button  class="btn btn-pri btn-pri-shadow" (click)="apply()">
+          Apply
+      </button>
+      
+  </div>
+  <div class="col-1 pt-1">
+      <button  class="btn btn-sec btn-sec-shadow" (click)="clearDate()">
+          Clear
+      </button>
+  </div>
+</div>
+<div  class="row mt-2 p-3">
+    
+<div class="col-lg-6 col-md-6 col-sm-6">
+  
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-12 col-md-12 circle">
+            <p class="font-blk mar-10"> English Analytics </p>
+            <div class="icon-big text-center icon-warning">
+              <circle-progress
+                [percent]="engPer"
+                [radius]="70"
+                [outerStrokeWidth]="10"
+                [titleFontSize]="24"
+                [unitsFontSize]="17"
+                [subtitleFontSize]="12"
+                [innerStrokeWidth]="8"
+                
+                [animation]="true"
+                [animationDuration]="3000">
+            </circle-progress>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="card-footer ">
+       
+        <div class="stats">
+          English Appointment Count - {{engCount}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+   
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-12 col-md-12 circle">
+            <p class="font-blk mar-10"> Arabic Analytics </p>
+            <div class="icon-big text-center icon-warning">
+              <circle-progress
+                [percent]="arabicPer"
+                [radius]="70"
+                [outerStrokeWidth]="10"
+                [titleFontSize]="30"
+                [unitsFontSize]="17"
+                [subtitleFontSize]="12"
+                [innerStrokeWidth]="3"
+                [clockwise]="false"
+                [animation]="true"
+                [animationDuration]="3000">
+            </circle-progress>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="card-footer ">
+       
+        <div class="stats">
+          Arabic Appointment Count - {{arabicCount}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- <div id="chart" class="col-5 mb-3 box shadow text-center">
+        <apx-chart
+          [series]="chartOptions.series"
+          [chart]="chartOptions.chart"
+          [plotOptions]="chartOptions.plotOptions"
+          [labels]="chartOptions.labels"
+          [legend]="chartOptions.legend"
+          [colors]="chartOptions.colors"
+          [responsive]="chartOptions.responsive"
+          [title]="chartOptions.title"
+          [fill]="chartOptions.fill"
+        ></apx-chart>
+      </div> -->
+      
+      
+      <div class="col-12 mt-2 ">
+        <table class="main_table text-center shadow p-3" style="width: 100%">
+            <thead class="table_head">
+                <tr>
+                    <th>SNo</th>
+                    <th>Language</th>
+                    <th>Appointment Count</th>
+                    <th>Appointment percentage </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td class=" font-blk">1</td>
+                    <td class="font-blk">
+                        English
+                    </td>
+                    <td class="font-blk">
+                        {{engCount}}
+                    </td>
+                    <td class="font-blk">
+                        {{engPer}} %
+                    </td>
+                </tr>
+                <tr>
+                    <td class=" font-blk">2</td>
+                    <td class="font-blk">
+                        Arabic
+                    </td>
+                    <td class="font-blk">
+                        {{arabicCount}}
+                    </td>
+                    <td class="font-blk">
+                        {{arabicPer}} %
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td class=" font-blk"></td>
+                    <td class="font-blk">
+                        Total:
+                    </td>
+                    <td class="font-blk">
+                        {{total2}}
+                    </td>
+                    <td class="font-blk">
+                        {{total3}} %
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+      </div>
+      <div class="col-3"></div>
+</div>

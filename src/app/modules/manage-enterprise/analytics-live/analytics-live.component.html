@@ -1,0 +1,105 @@
+<div class="row mt-3">
+    <div class="col-6">
+        <p class="font-blk mar-10"> Live Agent Analytics </p>
+    </div>
+    <div class="p-field col-4">
+        <p-calendar
+          #calendar
+          view="month"
+          showClear="true"
+          [hideOnDateTimeSelect]="true"
+          selectionMode="range"
+          [(ngModel)]="fromDate"
+          dateFormat="mm/yy"
+          [yearNavigator]="true" yearRange="2000:2030"
+          [readonlyInput]="true"
+          inputId="pickmonth"
+          
+          [showTransitionOptions]="'1ms'" [hideTransitionOptions]="'1ms'"
+          [showIcon]="true"
+          placeholder="Select Month/Year Range">
+          <p-footer>
+            <button pButton type="button" label="Close" 
+               (click)="calendar.hideOverlay()">
+            </button>
+        </p-footer>
+        </p-calendar>
+        
+    </div>
+
+
+   
+    
+    <div class="col-1 pt-1 text-right pr-0">
+        
+        <button  class="btn btn-pri btn-pri-shadow" (click)="apply()">
+            Apply
+        </button>
+        
+    </div>
+    <div class="col-1 pt-1">
+        <button  class="btn btn-sec btn-sec-shadow" (click)="clearDate()">
+            Clear
+        </button>
+    </div>
+</div>
+
+
+    
+
+
+
+<div class="row" *ngIf="isNoRecord">
+    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 text-center m-top">
+        <p><strong class="grey-color">Oops! No Records Found.</strong></p>
+    </div>
+</div>
+<div class="row" style="padding: 20px;" >
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row" *ngIf="!isNoRecord">
+            <div class="w-100">
+                <!-- <p class="font-blk mar-10">Ticket Details</p> -->
+                <table class="main_table shadow p-3" style="width: 70%">
+                    <thead class="table_head">
+                        <tr>
+                            <th>Month | Year </th>
+                            <th>Visitors</th>
+                            <th>Live Agent Traffic </th>
+                            <th>% Live Agent </th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="allTickets?.length > 0">
+                        <tr *ngFor="let p of allTickets;let i = index">
+                            <td [ngClass]="{ 'bold2': p.outputMonth==min.split(' ')[0], 'bold': p['outputMonth']==max.split(' ')[0] }">
+                                {{p['outputMonth']}} |  {{p['year']}}
+                            </td>
+                            <td [ngClass]="{ 'bold2': p.outputMonth==min.split(' ')[0], 'bold': p['outputMonth']==max.split(' ')[0] }">
+                                {{p['visitorCount']}}
+                            </td>
+                            <td [ngClass]="{ 'bold2': p.outputMonth==min.split(' ')[0], 'bold': p['outputMonth']==max.split(' ')[0] }">
+                                {{p['count']}}
+                            </td>
+                            <td [ngClass]="{ 'bold2': p.outputMonth==min.split(' ')[0], 'bold': p['outputMonth']==max.split(' ')[0] }">
+                                {{p['percentage']}} %
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class=" font-blk pr-2">Total:</td>
+                            <td class="font-blk pr-2">
+                                {{total1}}
+                            </td>
+                            <td class="font-blk pr-2">
+                                {{total2}}
+                            </td>
+                            <td class="font-blk pr-2">
+                                {{total3}} %
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
